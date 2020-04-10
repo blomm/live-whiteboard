@@ -1,0 +1,38 @@
+2020-04-09T14:56:59.848481000 0.013392s notice: Recursively removing directory /Users/mikeblom/dev/react/realtime-drawing-app/lessons/1_timer_over_socket/rethinkdb_data/tmp
+2020-04-09T14:56:59.851049000 0.015963s notice: Initializing directory /Users/mikeblom/dev/react/realtime-drawing-app/lessons/1_timer_over_socket/rethinkdb_data
+2020-04-09T14:56:59.851126000 0.016036s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/mikeblom/dev/react/realtime-drawing-app/lessons/1_timer_over_socket/rethinkdb_data' did not already exist or is empty.)
+2020-04-09T14:56:59.851160000 0.016071s notice: Running rethinkdb 2.4.0 (CLANG 11.0.0 (clang-1100.0.33.16))...
+2020-04-09T14:56:59.855254000 0.020166s notice: Running on Darwin 18.6.0 x86_64
+2020-04-09T14:56:59.855294000 0.020205s notice: Loading data from directory /Users/mikeblom/dev/react/realtime-drawing-app/lessons/1_timer_over_socket/rethinkdb_data
+2020-04-09T14:56:59.926713000 0.091623s info: Automatically using cache size of 6842 MB
+2020-04-09T14:56:59.927235000 0.092145s notice: Listening for intracluster connections on port 29015
+2020-04-09T14:56:59.928478000 0.093388s notice: Listening for client driver connections on port 28015
+2020-04-09T14:56:59.928514000 0.093424s notice: Listening for administrative HTTP connections on port 8080
+2020-04-09T14:56:59.928518000 0.093428s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2020-04-09T14:56:59.928521000 0.093431s notice: Listening on driver addresses: 127.0.0.1, ::1
+2020-04-09T14:56:59.928525000 0.093435s notice: Listening on http addresses: 127.0.0.1, ::1
+2020-04-09T14:56:59.928528000 0.093438s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2020-04-09T14:56:59.928531000 0.093441s notice: Server ready, "Mikes_MacBook_Pro_local_9cf" 246cc590-ad23-4962-8d35-6e2e97b51590
+2020-04-09T14:57:03.022321000 3.187202s notice: Server got SIGINT from pid 581, uid 501; shutting down...
+2020-04-09T14:57:03.022550000 3.187431s notice: Shutting down client connections...
+2020-04-09T14:57:03.022670000 3.187551s notice: All client connections closed.
+2020-04-09T14:57:03.022677000 3.187558s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2020-04-09T14:57:03.023226000 3.188107s notice: Storage engine shut down.
+2020-04-09T14:58:07.364997000 0.013619s notice: Running rethinkdb 2.4.0 (CLANG 11.0.0 (clang-1100.0.33.16))...
+2020-04-09T14:58:07.369291000 0.017909s notice: Running on Darwin 18.6.0 x86_64
+2020-04-09T14:58:07.369328000 0.017945s notice: Loading data from directory /Users/mikeblom/dev/react/realtime-drawing-app/lessons/1_timer_over_socket/rethinkdb_data
+2020-04-09T14:58:07.391290000 0.039909s info: Automatically using cache size of 6896 MB
+2020-04-09T14:58:07.391852000 0.040470s notice: Listening for intracluster connections on port 29015
+2020-04-09T14:58:07.392972000 0.041591s notice: Listening for client driver connections on port 28015
+2020-04-09T14:58:07.393011000 0.041630s notice: Listening for administrative HTTP connections on port 8080
+2020-04-09T14:58:07.393015000 0.041633s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2020-04-09T14:58:07.393017000 0.041636s notice: Listening on driver addresses: 127.0.0.1, ::1
+2020-04-09T14:58:07.393020000 0.041639s notice: Listening on http addresses: 127.0.0.1, ::1
+2020-04-09T14:58:07.393023000 0.041642s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2020-04-09T14:58:07.393026000 0.041645s notice: Server ready, "Mikes_MacBook_Pro_local_9cf" 246cc590-ad23-4962-8d35-6e2e97b51590
+2020-04-09T15:11:19.857550000 792.500368s info: Table 0b176dcd-72d4-45f9-8197-b31f7a3856b5: Starting a new Raft election for term 1.
+2020-04-09T15:11:19.857759000 792.500576s info: Table 0b176dcd-72d4-45f9-8197-b31f7a3856b5: Added replica on this server.
+2020-04-09T15:11:19.868847000 792.511664s info: Table 0b176dcd-72d4-45f9-8197-b31f7a3856b5: This server is Raft leader for term 1. Latest log index is 0.
+2020-04-09T15:35:09.174504000 1663.937239s info: Table 709ba245-688a-45e6-a0ba-7305858346d4: Starting a new Raft election for term 1.
+2020-04-09T15:35:09.174878000 1663.937612s info: Table 709ba245-688a-45e6-a0ba-7305858346d4: Added replica on this server.
+2020-04-09T15:35:09.186196000 1663.948930s info: Table 709ba245-688a-45e6-a0ba-7305858346d4: This server is Raft leader for term 1. Latest log index is 0.
