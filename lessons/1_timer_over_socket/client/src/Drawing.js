@@ -6,7 +6,7 @@ class Drawing extends Component {
     return this.props.drawing ? (
       <div className="Drawing">
         <div className="Drawing-title">{this.props.drawing.name}</div>
-        <Canvas drawingEnable={true} />
+        <Canvas drawingEnabled={true} />
       </div>
     ) : null;
   }
