@@ -9,6 +9,11 @@ export function subscribeToDrawings(cb) {
   socket.emit('subscribeToDrawings');
 }
 
+export function subscribeToDrawingLines(drawingId, cb) {
+  socket.on(`drawingLine:${drawingId}`, cb);
+  socket.emit('subscribeToDrawingLines', drawingId);
+}
+
 export function createDrawing(name) {
   socket.emit('createDrawing', { name });
 }
