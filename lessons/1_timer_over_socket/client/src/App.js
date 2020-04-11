@@ -3,6 +3,7 @@ import './App.css';
 import DrawingForm from './DrawingForm';
 import DrawingList from './DrawingList';
 import Drawing from './Drawing';
+import Connection from './Connection';
 
 class App extends Component {
   state = {};
@@ -33,6 +34,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h2>Our awesome drawing app</h2>
+          <Connection />
           {ctrl}
         </div>
       </div>

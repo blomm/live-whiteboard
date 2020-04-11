@@ -1,6 +1,5 @@
 const io = require('socket.io')();
 const r = require('rethinkdb');
-const port = 8000;
 
 function createDrawing({ connection, name }) {
   r.table('drawings')
@@ -67,6 +66,7 @@ r.connect({
   });
 });
 
+const port = parseInt(process.argv[2], 10) || 8000;
 io.listen(port);
 
 console.log('listening on port ', port);

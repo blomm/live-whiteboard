@@ -1,13 +1,19 @@
 import openSocket from 'socket.io-client';
 import Rx from 'rxjs/Rx';
-
-const socket = openSocket('http://localhost:8000');
+const port = parseInt(window.location.search.replace('?', ''), 10) || 8000;
+const socket = openSocket(`http://localhost:${port}`);
 
 export function subscribeToDrawings(cb) {
   // socket.on takes a callback function which is passed the value from
   // the partnering client.emit
   socket.on('drawing', cb);
   socket.emit('subscribeToDrawings');
+}
+
+export function subscribeToConnectionEvent(cb) {
+  socket.on('connect', () => cb({ state: 'connected', port }));
+  socket.on('disconnect', () => cb({ state: 'disconnected', port }));
+  socket.on('connect_error', () => cb({ state: 'disconnected', port }));
 }
 
 export function subscribeToDrawingLines(drawingId, cb) {
