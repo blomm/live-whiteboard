@@ -1,4 +1,5 @@
 import openSocket from 'socket.io-client';
+import Rx from 'rxjs/Rx';
 
 const socket = openSocket('http://localhost:8000');
 
@@ -10,7 +11,15 @@ export function subscribeToDrawings(cb) {
 }
 
 export function subscribeToDrawingLines(drawingId, cb) {
-  socket.on(`drawingLine:${drawingId}`, cb);
+  Rx.Observable.fromEventPattern(
+    (h) => socket.on(`drawingLine:${drawingId}`, h),
+    (h) => socket.off(`drawingLine:${drawingId}`, h)
+  )
+    .bufferTime(100)
+    .map((lines) => ({ lines }))
+    .subscribe((linesEvent) => cb(linesEvent));
+
+  //socket.on(`drawingLine:${drawingId}`, cb);
   socket.emit('subscribeToDrawingLines', drawingId);
 }
 
