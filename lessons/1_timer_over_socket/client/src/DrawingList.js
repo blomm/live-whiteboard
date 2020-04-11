@@ -1,7 +1,7 @@
-import React, { Commponent } from 'react';
+import React, { Component } from 'react';
 import { subscribeToDrawings } from './api';
 
-class DrawingList extends React.Component {
+class DrawingList extends Component {
   constructor(props) {
     super(props);
 
@@ -17,10 +17,14 @@ class DrawingList extends React.Component {
   };
 
   render() {
-    const drawings = this.state.drawings.map((d) => {
+    const drawings = this.state.drawings.map((drawing) => {
       return (
-        <li className="DrawingList-item" key={d.id}>
-          {d.name}
+        <li
+          className="DrawingList-item"
+          key={drawing.id}
+          onClick={(event) => this.props.selectDrawing(drawing)}
+        >
+          {drawing.name}
         </li>
       );
     });
