@@ -1,5 +1,7 @@
 import openSocket from 'socket.io-client';
 import Rx from 'rxjs/Rx';
+import createSync from 'rxsync';
+
 const port = parseInt(window.location.search.replace('?', ''), 10) || 8000;
 const socket = openSocket(`http://localhost:${port}`);
 
@@ -53,6 +55,27 @@ export function createDrawing(name) {
   socket.emit('createDrawing', { name });
 }
 
+const sync = createSync({
+  maxRetries: 10,
+  delayBetweenRetries: 1000,
+  syncAction: (line) =>
+    new Promise((resolve, reject) => {
+      let sent = false;
+      socket.emit('publishLine', line, () => {
+        sent = true;
+        resolve();
+      });
+      setTimeout(() => {
+        if (!sent) {
+          reject();
+        }
+      }, 2000);
+    }),
+});
+
+sync.failedItems.subscribe((x) => console.error('failed line sync ', x));
+sync.syncedItems.subscribe((x) => console.log('suscessful sync', x));
+
 export function publishLine({ drawingId, line }) {
-  socket.emit('publishLine', { drawingId, ...line });
+  sync.queue({ drawingId, ...line });
 }
